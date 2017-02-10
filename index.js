@@ -12,7 +12,7 @@
 	var Log = function () {};
 
 	Log.prototype.lock = function () {
-		return location.hash.indexOf('#log') !== -1;
+		return location.hash.indexOf('#log') === -1;
 	};
 
 	Log.prototype.line = function (char) {
