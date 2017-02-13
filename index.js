@@ -1,4 +1,4 @@
- 
+
 ;(function(factory){
 
     if (typeof define === 'function' && define.amd) {
@@ -40,5 +40,7 @@
 		return this.lock() ? '' : console.clear();
 	};
 
-	exports.Log = new Log();
+    return {
+        Log: new Log()
+    };
 }));
