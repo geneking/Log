@@ -9,38 +9,37 @@
 
 }(function(undefined) {
 
-	var Log = function () {};
-
-	Log.prototype.lock = function () {
+	var lock = function () {
 		return location.hash.indexOf('#log') === -1;
 	};
 
-	Log.prototype.line = function (char) {
+	var line = function (char) {
+        var char = char || '#';
 		var line = Array(120).fill(char).join('');
-		return this.lock() ? '' : console.log(line);
+		return lock() ? '' : console.log(line);
 	};
 
-	Log.prototype.write = function (text) {
-		return this.lock() ? '' : console.log(text);
+	var log = function (text, info) {
+		return lock() ? '' : console.log(text, info || '');
 	};
 
-	Log.prototype.info = function (text) {
-		return this.lock() ? '' : console.info(text);
+	var info = function (text, info) {
+		return lock() ? '' : console.info(text, info || '');
 	};
 
-	Log.prototype.warn = function (text) {
-		return this.lock() ? '' : console.warn(text);
+	var warn = function (text, info) {
+		return lock() ? '' : console.warn(text, info || '');
 	};
 
-	Log.prototype.error = function (text) {
-		return this.lock() ? '' : console.error(text);
-	};
-
-	Log.prototype.clear = function () {
-		return this.lock() ? '' : console.clear();
+	var error = function (text, info) {
+		return lock() ? '' : console.error(text, info || '');
 	};
 
     return {
-        Log: new Log()
+        log: log,
+        info: info,
+        warn: warn,
+        error: error,
+        line: line,
     };
 }));
