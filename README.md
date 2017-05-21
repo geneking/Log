@@ -14,7 +14,7 @@ import Log from 'es-log';
 * Log.info  <===> console.info
 * Log.warn  <===> console.warn
 * Log.error <===> console.error
-* 此外，加了Log.line，主要用来输出字符行做log块的分隔
+* 此外，加了Log.line方法，主要用来输出字符行做log块的分隔
 ```javascript
 Log.line('#');
 输出：
