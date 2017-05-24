@@ -24,11 +24,11 @@ Log.line('=');
 ==========================================================
 ```
 ### 3、开启Log显示
-* 其实我们只需要在浏览器地址后面输入： #log
+* 其实我们只需要在url加参数logger=1
 * 开启的原理其实比较简单，我们只是重新封装了console的常用方法，在调用之前会去拿url做判断有没有加log的hash
 ```javascript
 //判断是否开启log入口的方法，具体逻辑可以看源码
 var lock = function () {
-    return location.hash.indexOf('#log') === -1;
+    return location.hash.indexOf('logger=1') === -1;
 };
 ```
