@@ -10,7 +10,7 @@
 }(function(undefined) {
 
 	var lock = function () {
-		return location.hash.indexOf('#log') === -1;
+		return location.href.indexOf('logger=1') === -1;
 	};
 
 	var line = function (char) {
