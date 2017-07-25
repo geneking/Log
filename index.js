@@ -1,12 +1,9 @@
-
 ;(function(factory){
-
     if (typeof define === 'function' && define.amd) {
         define(factory);
     } else {
         factory();
     }
-
 }(function(undefined) {
 
 	var lock = function () {
@@ -14,7 +11,7 @@
 	};
 
 	var line = function (char) {
-        	var char = char || '#';
+        var char = char || '#';
 		var line = Array(120).fill(char).join('');
 		return lock() ? '' : console.log(line);
 	};
